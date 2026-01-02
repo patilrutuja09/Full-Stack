@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+
+<form style="
+    padding: 30px;
+    width: 30%;
+    border: 2px solid black;
+    background-color: rgb(89, 161, 89);
+    font-family: Arial, sans-serif;
+    margin: 30px auto;
+">
+
+    <div style="background-color: rgb(151, 241, 151); padding: 20px; border-radius: 20px; margin-bottom: 20px;">
+        <h3>Step 1: Enter Your Personal Details</h3>
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter email"><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="Enter phone number"><br><br>
+    </div>
+
+    <div style="background-color: rgb(151, 241, 151); padding: 20px; border-radius: 20px; margin-bottom: 20px;">
+        <h3>Step 2: Delivery Address</h3>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="3" cols="30"></textarea><br><br>
+
+        <label for="postcode">Post Code:</label><br>
+        <input type="text" id="postcode" name="postcode" placeholder="Enter post code"><br><br>
+
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" placeholder="Enter country"><br><br>
+    </div>
+
+    <div style="background-color: rgb(151, 241, 151); padding: 20px; border-radius: 20px;">
+        <h3>Step 3: Card Details</h3>
+
+        <label for="cardType">Card Type:</label><br>
+        <input type="text" id="cardType" name="cardType" placeholder="Visa / MasterCard"><br><br>
+
+        <label for="cardNumber">Card Number:</label><br>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number"><br><br>
+
+        <label for="securityCode">Security Code:</label><br>
+        <input type="password" id="securityCode" name="securityCode" placeholder="CVV"><br><br>
+
+        <label for="cardName">Name on Card:</label><br>
+        <input type="text" id="cardName" name="cardName" placeholder="Exact name on card"><br><br>
+        <button>BUY</button>
+    </div>
+
+</form>
+
+</body>
+</html>
