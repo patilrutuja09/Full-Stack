@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+
+    /* Navigation Menu */
+    nav {
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Profile Section */
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #333;
+    }
+
+    .profile h2 {
+        margin: 0;
+    }
+
+    /* Personal Info Table */
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    table th, table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #333;
+        color: white;
+    }
+
+    /* Registration Form */
+    .registration-form {
+        width: 90%;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .registration-form input,
+    .registration-form select,
+    .registration-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .registration-form button {
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .registration-form button:hover {
+        background-color: #555;
+    }
+
+    /* College Location */
+    .location {
+        width: 90%;
+        max-width: 800px;
+        margin: 20px auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .location iframe {
+        width: 100%;
+        height: 400px;
+        border: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav>
+    <a href="#profile">Profile</a>
+    <a href="#info">Personal Info</a>
+    <a href="#register">Registration</a>
+    <a href="#location">College Location</a>
+</nav>
+
+<!-- Profile Section -->
+<section class="profile" id="profile">
+    <img src="img/abc.jpeg" alt="Profile Photo">
+    <div>
+        <h2>Rutuja Patil</h2>
+        <p>Computer Science Student</p>
+        <p>Sharad Institute of technology collage of Engineering</p>
+    </div>
+</section>
+
+<!-- Personal Info Table -->
+<section id="info">
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Student ID</td>
+            <td>CS12345</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>rpatil0910@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>+1234567890</td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>09-nov-2005</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>Ich</td>
+        </tr>
+    </table>
+</section>
+<section class="registration-form" id="register">
+    <h2>Registration Form</h2>
+    <form>
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="date" name="dob" placeholder="Date of Birth" required>
+        <select name="course" required>
+            <option value="">Select Course</option>
+            <option value="cs">Computer Science</option>
+            <option value="ee">Electrical Engineering</option>
+            <option value="me">Mechanical Engineering</option>
+        </select>
+        <textarea name="address" placeholder="Address" rows="3" required></textarea>
+        <button type="submit">Register</button>
+    </form>
+</section>
+
+<!-- College Location -->
+<section class="location" id="location">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.123456!2d90.123456!3d23.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c123456789%3A0xabcdef123456!2sExample+University!5e0!3m2!1sen!2sbd!4v1600000000000!5m2!1sen!2sbd" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</section>
+
+</body>
+</html>

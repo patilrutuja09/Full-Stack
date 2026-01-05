@@ -1,0 +1,9 @@
+col classes resolution
+xs-mobile<=767px
+sm-tab/ipad>=786px
+md-minilaptop>=992px
+lg=large desktop>=1200px
+
+
+<div class='col-xs-12 col-sm-12 col-md-5 col-lg-5>
+
