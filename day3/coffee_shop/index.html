@@ -5,6 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Coffee Shop</title>
     <link rel="stylesheet" href="css/style.css">
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    const item = cart.find(p => p.name === name);
+
+    if (item) {
+        item.qty++;
+    } else {
+        cart.push({ name, price, qty: 1 });
+    }
+
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const cartCount = document.getElementById("cart-count");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    cart.forEach((item, i) => {
+        total += item.price * item.qty;
+        count += item.qty;
+
+        cartItems.innerHTML += `
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <strong>${item.name}</strong><br>
+                    ₹${item.price} × ${item.qty}
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-outline-dark"
+                        onclick="changeQty(${i},-1)">−</button>
+                    <button class="btn btn-sm btn-outline-dark"
+                        onclick="changeQty(${i},1)">+</button>
+                    <button class="btn btn-sm btn-outline-danger"
+                        onclick="removeItem(${i})">✕</button>
+                </div>
+            </div>
+        `;
+    });
+
+    cartTotal.innerText = total;
+    cartCount.innerText = count;
+}
+
+function changeQty(i, change) {
+    cart[i].qty += change;
+    if (cart[i].qty <= 0) cart.splice(i, 1);
+    updateCart();
+}
+
+function removeItem(i) {
+    cart.splice(i, 1);
+    updateCart();
+}
+
+/* TOGGLE */
+function showCoffee() {
+    document.querySelector('.coffee-items').style.display = "flex";
+    document.querySelector('.snack-items').style.display = "none";
+}
+
+function showSnacks() {
+    document.querySelector('.coffee-items').style.display = "none";
+    document.querySelector('.snack-items').style.display = "flex";
+}
+
+function placeOrder() {
+    alert("Order placed successfully!");
+    cart = [];
+    updateCart();
+}
+</script>
+    
     <!-- Bootstrap CSS -->
     <link
         rel="stylesheet"
@@ -22,7 +101,7 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"
     ></script>
-    <script src="js/script.js" defer></script>
+
 </head>
 <body class="navbar-gradient">
 
@@ -45,8 +124,7 @@
         <!-- Menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#popular-coffee">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#order">Order</a></li>
+                <li class="nav-item"><a class="nav-link" href="#popular-coffee">Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about-us">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact-us">Contact</a></li>
                <li class="nav-item position-relative ml-3">
@@ -120,8 +198,6 @@
 
 
 
-<!-- ================= POPULAR COFFEE ================= -->
-<!-- CART ICON (Place inside navbar) -->
 
 
 <!-- POPULAR COFFEE SECTION -->
@@ -155,11 +231,6 @@
 
                         <div class="price-row">
                             <span class="price">₹ 250</span>
-                            <div class="qty-box">
-                                <button onclick="changeQty(this,-1)">−</button>
-                                <span class="qty">1</span>
-                                <button onclick="changeQty(this,1)">+</button>
-                            </div>
                         </div>
 
                        <button class="buy-btn" onclick="addToCart('Regular Coffee', 250)">ADD TO CART</button>
@@ -182,11 +253,6 @@
 
                         <div class="price-row">
                             <span class="price">₹ 280</span>
-                            <div class="qty-box">
-                                <button onclick="changeQty(this,-1)">−</button>
-                                <span class="qty">1</span>
-                                <button onclick="changeQty(this,1)">+</button>
-                            </div>
                         </div>
 
                         <button class="buy-btn" onclick="addToCart('Latte', 280)">ADD TO CART</button>
@@ -209,11 +275,6 @@
 
                         <div class="price-row">
                             <span class="price">₹ 300</span>
-                            <div class="qty-box">
-                                <button onclick="changeQty(this,-1)">−</button>
-                                <span class="qty">1</span>
-                                <button onclick="changeQty(this,1)">+</button>
-                            </div>
                         </div>
 
                         <button class="buy-btn" onclick="addToCart('Mocha', 300)">ADD TO CART</button>
@@ -236,11 +297,6 @@
 
                         <div class="price-row">
                             <span class="price">₹ 220</span>
-                            <div class="qty-box">
-                                <button onclick="changeQty(this,-1)">−</button>
-                                <span class="qty">1</span>
-                                <button onclick="changeQty(this,1)">+</button>
-                            </div>
                         </div>
 
                         <button class="buy-btn" onclick="addToCart('Black Coffee', 220)">ADD TO CART</button>
@@ -269,11 +325,6 @@
 
                 <div class="price-row">
                     <span class="price">₹ 120</span>
-                    <div class="qty-box">
-                        <button onclick="changeQty(this,-1)">−</button>
-                        <span class="qty">1</span>
-                        <button onclick="changeQty(this,1)">+</button>
-                    </div>
                 </div>
 
                 <button class="buy-btn" onclick="addToCart('Chocolate Cookie', 120)">ADD TO CART</button>
@@ -298,11 +349,6 @@
 
                 <div class="price-row">
                     <span class="price">₹ 150</span>
-                    <div class="qty-box">
-                        <button onclick="changeQty(this,-1)">−</button>
-                        <span class="qty">1</span>
-                        <button onclick="changeQty(this,1)">+</button>
-                    </div>
                 </div>
 
                 <button class="buy-btn" onclick="addToCart('Butter Croissant', 150)">ADD TO CART</button>
@@ -327,11 +373,6 @@
 
                 <div class="price-row">
                     <span class="price">₹ 180</span>
-                    <div class="qty-box">
-                        <button onclick="changeQty(this,-1)">−</button>
-                        <span class="qty">1</span>
-                        <button onclick="changeQty(this,1)">+</button>
-                    </div>
                 </div>
 
                 <button class="buy-btn" onclick="addToCart('Brownie', 180)">ADD TO CART</button>
@@ -356,11 +397,6 @@
 
                 <div class="price-row">
                     <span class="price">₹ 160</span>
-                    <div class="qty-box">
-                        <button onclick="changeQty(this,-1)">−</button>
-                        <span class="qty">1</span>
-                        <button onclick="changeQty(this,1)">+</button>
-                    </div>
                 </div>
 
                 <button class="buy-btn" onclick="addToCart('Cheese Sandwich', 160)">ADD TO CART</button>
