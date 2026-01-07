@@ -1,0 +1,541 @@
+
+    /* ================== STYLES ================== */
+    .navbar-gradient {
+        background: linear-gradient(90deg, #8b4513, #ce7939, #f4a261);
+    }
+
+    .footer-gradient {
+        background: linear-gradient(90deg, #f4a261, #ce7939, #8b4513);
+    }
+
+    .hero-overlay {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+        height: 100%;
+    }
+/* ================= HEADER ================= */
+.coffee-navbar {
+    background: linear-gradient(90deg, #8b4513, #ce7939, #f4a261);
+    padding: 15px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+}
+
+/* Brand */
+.coffee-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff !important;
+}
+/* Make navbar links bold and larger */
+.coffee-navbar .nav-link {
+    font-weight: bold;   /* Makes text bold */
+    font-size: 1.2rem;   /* Adjust the size as needed */
+}
+
+/* Optional: make the brand name bold and bigger */
+.coffee-navbar .navbar-brand span {
+    font-weight: bold;
+    font-size: 1.4rem;  /* Adjust as needed */
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* Nav links */
+.coffee-navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.coffee-navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.coffee-navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Toggle icon */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Space for fixed navbar */
+body {
+    padding-top: 90px;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= POPULAR COFFEE SECTION ================= */
+
+.popular-section {
+    padding: 70px 0;
+    background: linear-gradient(135deg, #c97b3b, #f2a365);
+}
+
+.popular-section h2 {
+    font-weight: 700;
+    color: #3e1f0d;
+}
+
+/* ================= TOGGLE ================= */
+
+.toggle-wrap {
+    display: inline-flex;
+    border: 2px solid #000;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.toggle-btn {
+    padding: 10px 38px;
+    border: none;
+    background: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: #000;
+    color: #fff;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.coffee-product-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    transition: all 0.35s ease;
+}
+
+.coffee-product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 22px 45px rgba(0,0,0,0.28);
+}
+
+/* ================= IMAGE ================= */
+
+.coffee-img-wrap {
+    height: 200px;
+    overflow: hidden;
+}
+
+.coffee-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.coffee-product-card:hover img {
+    transform: scale(1.08);
+}
+
+/* ================= CARD CONTENT ================= */
+
+.coffee-content {
+    padding: 18px 20px 22px;
+}
+
+/* TAG */
+
+.coffee-tag {
+    display: inline-block;
+    background: #f4a261;
+    font-size: 11px;
+    padding: 4px 10px;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+
+/* TITLE */
+
+.coffee-content h5 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+/* RATING */
+
+.rating {
+    color: #e63946;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.rating span {
+    color: #666;
+    font-size: 12px;
+}
+
+/* DESCRIPTION */
+
+.coffee-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+/* PRICE + QTY */
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* QTY BOX */
+
+.qty-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-box button {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ADD TO CART */
+
+.buy-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 12px 0;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #7b3f00;
+}
+
+/* MORE DETAILS */
+
+.details-link {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: #000;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.details-link:hover {
+    text-decoration: underline;
+}
+
+/* ================= CART BADGE ================= */
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: -8px;
+    background: red;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= GRID SPACING ================= */
+
+.row.coffee-items,
+.row.snack-items {
+    row-gap: 28px;
+}
+    /* ================= HERO STATIC IMAGE ================= */
+    .slider-img {
+    position: relative;
+    height: 650px;
+}
+
+.slider-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.carousel-inner .carousel-item {
+    transition: transform 1s ease, opacity 1s ease-in-out;
+}
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    padding: 35px 0;
+   
+}
+
+.about-text h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #3e1f0d;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a2c1a;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.about-btn {
+    background: linear-gradient(90deg, #8b4513, #5a2d0c);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+.about-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139,69,19,0.6);
+}
+
+/* Image */
+/* .about-img {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease;
+} */
+
+.about-img img {
+    width: 70%;
+
+    border-radius: 20px;
+    transition: transform 0.6s ease;
+}
+
+/* Image hover */
+.about-img:hover img {
+    transform: scale(1.1);
+}
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+    padding: 80px 0;
+ 
+}
+
+.contact-card {
+    background: #f4a261;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3)!;
+    animation: fadeUp 0.8s ease;
+}
+
+.contact-card label {
+    font-weight: 600;
+    color: #5a2d0c;
+}
+
+/* Inputs */
+.contact-card .form-control {
+    border-radius: 12px;
+    border: 2px solid #8b4513;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.contact-card .form-control:focus {
+    border-color: #5a2d0c;
+    box-shadow: 0 0 8px rgba(139,69,19,0.6);
+}
+
+/* Button */
+.contact-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #8b4513, #5a2d0c);
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(139,69,19,0.8);
+}
+
+/* Success message */
+.contact-success {
+    display: none;
+    margin-top: 20px;
+    padding: 12px;
+    background: #2d6a4f;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+/* ================= FOOTER ================= */
+.coffee-footer {
+    background: linear-gradient(135deg, #8b4513, #3e1f0d);
+    color: #fff;
+    padding: 50px 0 20px;
+}
+
+.coffee-footer h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.coffee-footer p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Divider */
+.coffee-footer hr {
+    border-color: rgba(255,255,255,0.3);
+    margin: 20px 0;
+}
+
+/* Copyright */
+.coffee-footer .copyright {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+
+/* Contact Card Styling */
+.contact-card {
+    background-color: #fdfdfd; /* Light white card */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* visible shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 40px rgb(0, 0, 0)!important; /* stronger hover shadow */
+}
+
+
+
+/* Logo Circle Styling */
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #7b3f00;
+    margin: 0 auto; /* center logo */
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Button Hover */
+.btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #a65c00;
+    transform: translateY(-2px); /* small lift effect */
+}
+
+/* Responsive Logo */
+@media (max-width: 767px) {
+    .logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+}
+
